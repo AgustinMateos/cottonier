@@ -125,7 +125,7 @@ export default function Example() {
             <a href="/preguntasFrecuentes" className="text-sm font-semibold leading-6 text-gray-900">
               Preguntas Frecuentes
             </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <a href="/contacto" className="text-sm font-semibold leading-6 text-gray-900">
               Contacto
             </a>
           </PopoverGroup>
