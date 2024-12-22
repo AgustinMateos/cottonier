@@ -46,7 +46,7 @@ export default function Example() {
         <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
           
           <div className="flex lg:flex-1 bg-white">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Cottonier S.R.L.</span>
               <img alt="" src="/logo.svg" className="h-[3rem] w-auto" />
             </a>
@@ -63,7 +63,7 @@ export default function Example() {
   
           {/* Inicio en Desktop */}
           <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
               Inicio
             </a>
             <Popover className="relative">
@@ -119,10 +119,10 @@ export default function Example() {
               </PopoverPanel>
             </Popover>
   
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <a href="/nosotros" className="text-sm font-semibold leading-6 text-gray-900">
               Nosotros
             </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <a href="/preguntasFrecuentes" className="text-sm font-semibold leading-6 text-gray-900">
               Preguntas Frecuentes
             </a>
             <a href="#" className="text-sm font-semibold leading-6 text-gray-900">

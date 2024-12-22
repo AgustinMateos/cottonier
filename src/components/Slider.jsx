@@ -1,5 +1,5 @@
-'use client'
-import React, { useState } from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function Slider() {
@@ -34,6 +34,12 @@ export default function Slider() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showNeedle, setShowNeedle] = useState(false);
+
+  useEffect(() => {
+    // Dispara la animación cuando el componente se monta
+    setShowNeedle(true);
+  }, []);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
@@ -57,10 +63,21 @@ export default function Slider() {
   };
 
   return (
-    <div className="bg-[#ECECEC] w-full h-[80vh] flex flex-col items-center justify-center">
+    <div className="bg-[#ECECEC] w-full h-[90vh] flex flex-col items-center justify-center">
+      {/* Aguja */}
       <div className="relative w-full h-[40vh] flex items-center justify-center">
-        <h3 className="absolute top-5 text-2xl font-bold">Nuestros productos más destacados</h3>
-      </div>
+        <div
+          className={`absolute top-[-14vh] w-full transition-transform duration-1000 ${
+            showNeedle ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <Image className="w-full" width={600} height={150} src="/aguja.svg" alt="Aguja" />
+        </div>
+        <div className="absolute top-5 text-2xl font-bold flex flex-col h-[100px] justify-around items-center" > <h3 className=" top-5 text-2xl font-bold">Nuestros productos más destacados</h3>
+        <p className=" top-5 text-2xl font-bold"> Estos son algunos de nuestros productos más elegidos por nuestros clientes.</p>
+     </div>
+        </div>
+
       <div className="relative w-full flex justify-center items-center">
         {/* Contenedor de información izquierda */}
         <div className="w-1/6 flex flex-col gap-4 text-center">

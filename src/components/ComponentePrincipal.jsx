@@ -6,7 +6,7 @@ export default function ComponentePrincipal() {
     >
       {/* Contenido dentro del div */}
       <div className="w-[60%]  h-full flex items-center justify-center">
-        <div className="w-[80%] h-[60%] flex flex-col justify-around  ">
+        <div className="w-[80%] h-[70%] flex flex-col justify-around  ">
           <div className="text-[40px]"> <h1>Tu aliado en calidad y variedad desde 1965:</h1></div>
        <div className="text-[32px]"><h2>Cottonier se ha consolidado como un líder en la producción y comercialización de hilos para coser, ofreciendo calidad y variedad para el mercado textil argentino. Nuestra experiencia y compromiso nos permiten satisfacer las necesidades de nuestros clientes con productos de excelencia y un servicio confiable.</h2></div>
         
