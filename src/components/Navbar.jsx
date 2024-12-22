@@ -24,7 +24,7 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const products = [
-    { name: 'Poliester Fibra Cortada', description: 'Get a better understanding of your traffic', href: '#', icon: '/iconoCono.svg'  },
+    { name: 'Poliester Fibra Cortada', description: 'Get a better understanding of your traffic', href: '/poliesterFibraCortada', icon: '/iconoCono.svg'  },
     { name: 'Poliester Fibra Continua', description: 'Speak directly to your customers', href: '#', icon: '/iconoCono.svg' },
     { name: 'Algodón peinado apto para teñir', description: 'Your customers’ data will be safe and secure', href: '#', icon: '/iconoCono.svg' },
     { name: 'Algodón mercerizado', description: 'Connect with third-party tools', href: '#', icon: '/iconoCono.svg' },

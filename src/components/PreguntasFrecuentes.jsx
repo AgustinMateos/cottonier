@@ -123,7 +123,7 @@ export default function PreguntasFrecuentesHome() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-4xl mx-auto p-6 bg-[#ECECEC]">
       <h2 className="text-2xl font-semibold mb-4">Preguntas Frecuentes</h2>
 
       <div className="space-y-4">
