@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 export default function PreguntasFrecuentesHome() {
-  // Array con las preguntas frecuentes y sus respuestas
   const preguntas = [
     {
       pregunta: '¿Cómo puedo hacer un pedido de hilos?',
@@ -110,46 +109,42 @@ export default function PreguntasFrecuentesHome() {
     },
   ];
 
-  // Estado para manejar la visibilidad de las respuestas
+
   const [abierta, setAbierta] = useState(null);
 
-  // Función para alternar la visibilidad de la respuesta
   const toggleRespuesta = (index) => {
-    if (abierta === index) {
-      setAbierta(null); // Si la misma pregunta es clickeada, cerramos la respuesta
-    } else {
-      setAbierta(index); // Abrimos la respuesta de la pregunta seleccionada
-    }
+    setAbierta(abierta === index ? null : index);
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-[#ECECEC]">
-      <h2 className="text-2xl font-semibold mb-4">Preguntas Frecuentes</h2>
+    <div className="min-h-screen bg-[#ECECEC]">
+      <div className="max-w-4xl mx-auto p-6 bg-[#ECECEC]">
+        <h2 className="text-2xl font-semibold mb-4">Preguntas Frecuentes</h2>
 
-      <div className="space-y-4">
-        {preguntas.map((item, index) => (
-          <div
-            key={index}
-            className="border p-4 bg-[#eaeaea] rounded-[20px] pb-4 flex items-center gap-4"
-          >
-            {/* Imagen al lado de la pregunta */}
-            <div className="flex-shrink-0">
-              <Image src="/flechaFaq.svg" alt="Flecha FAQ" width={20} height={20} />
-            </div>
-            
-            <div className="flex-1">
-              <div
-                className="cursor-pointer text-lg font-medium text-black"
-                onClick={() => toggleRespuesta(index)}
-              >
-                {item.pregunta}
+        <div className="space-y-4">
+          {preguntas.map((item, index) => (
+            <div
+              key={index}
+              className="border p-4 bg-[#ffffff] rounded-[20px] pb-4 flex items-center gap-4"
+            >
+              <div className="flex-shrink-0">
+                <Image src="/flechaFaq.svg" alt="Flecha FAQ" width={20} height={20} />
               </div>
-              {abierta === index && (
-                <div className="mt-2 text-gray-700">{item.respuesta}</div>
-              )}
+
+              <div className="flex-1">
+                <div
+                  className="cursor-pointer text-lg font-medium text-black"
+                  onClick={() => toggleRespuesta(index)}
+                >
+                  {item.pregunta}
+                </div>
+                {abierta === index && (
+                  <div className="mt-2 text-gray-700">{item.respuesta}</div>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

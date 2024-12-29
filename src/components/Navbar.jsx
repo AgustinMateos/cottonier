@@ -182,13 +182,13 @@ export default function Example() {
                     </DisclosurePanel>
                   </Disclosure>
                   <a
-                    href="#"
+                    href="/nosotros"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Nosotros
                   </a>
                   <a
-                    href="#"
+                    href="/preguntasFrecuentes"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Preguntas Frecuentes
