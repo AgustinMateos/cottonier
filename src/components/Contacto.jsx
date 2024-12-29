@@ -20,8 +20,8 @@ export default function Contacto() {
   ];
 
   return (
-    <div>
-      <div className="w-full flex flex-row justify-around h-[30vh] items-center">
+    <div className="bg-[#ECECEC]">
+      <div className="w-full flex flex-row flex-wrap justify-around h-[30vh] items-center ">
         {items.map((item, index) => (
           <div key={index} className="flex flex-col text-center items-center">
             <Image src={item.src} alt={item.alt} width={50} height={50} />
@@ -29,7 +29,7 @@ export default function Contacto() {
           </div>
         ))}
       </div>
-      <div className="w-full flex flex-wrap md:flex-nowrap justify-evenly">
+      <div className="w-full flex flex-wrap md:flex-nowrap justify-evenly p-[20px]">
         {/* Mapa */}
         <div className="w-full md:w-[40%] h-[400px] md:h-auto ">
           <iframe
@@ -44,7 +44,7 @@ export default function Contacto() {
         </div>
 
         {/* Formulario */}
-        <div className="w-full md:w-[40%] p-6 ">
+        <div className="w-full md:w-[40%] p-6 bg-white rounded-[20px] ">
           <form className="flex flex-col space-y-4">
             <div>
               <label

@@ -24,17 +24,17 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const products = [
-    { name: 'Poliester Fibra Cortada', description: 'Get a better understanding of your traffic', href: '/poliesterFibraCortada', icon: '/iconoCono.svg'  },
-    { name: 'Poliester Fibra Continua', description: 'Speak directly to your customers', href: '#', icon: '/iconoCono.svg' },
-    { name: 'Algodón peinado apto para teñir', description: 'Your customers’ data will be safe and secure', href: '#', icon: '/iconoCono.svg' },
-    { name: 'Algodón mercerizado', description: 'Connect with third-party tools', href: '#', icon: '/iconoCono.svg' },
-    { name: 'Hilo bolsero', description: 'Build strategic funnels that will convert', href: '#', icon: '/iconoCono.svg' },
-    { name: 'Hilo monofilamento de nylon', description: 'Build strategic funnels that will convert', href: '#', icon: '/iconoCono.svg' },
-    { name: 'Lubricantes', description: 'Build strategic funnels that will convert', href: '#', icon: '/iconoCono.svg' },
+    { name: 'Poliester Fibra Cortada', description: 'Títulos: 120(40/2) - 90(30/2) - (75(24/2) - 20/3', href: '/poliesterFibraCortada', icon: '/iconoCono.svg'  },
+    { name: 'Poliester Fibra Continua', description: 'Título: 150/1', href: '#', icon: '/iconoCono.svg' },
+    { name: 'Algodón peinado apto para teñir', description: 'Títulos: 50(30/2) - 50(24/2) - 24/3 - 7/3', href: '#', icon: '/iconoCono.svg' },
+    { name: 'Algodón mercerizado', description: 'Títulos: 80(50/2) - 52(32/2) - 40(24/2) - 24/3', href: '#', icon: '/iconoCono.svg' },
+    { name: 'Hilo bolsero', description: 'Título: 20/6', href: '#', icon: '/iconoCono.svg' },
+    { name: 'Hilo monofilamento de nylon', description: 'Título: 120', href: '#', icon: '/iconoCono.svg' },
+    { name: 'Lubricantes', description: 'Tipos: Silicona - Aceite', href: '#', icon: '/iconoCono.svg' },
 ]
 const callsToAction = [
     { name: 'Destacados', href: '#', icon: '/iconoCono.svg' },
-    { name: 'Contacto', href: '#', icon: '/iconoTelefono.svg' },
+    { name: 'Contacto', href: '/contacto', icon: '/iconoTelefono.svg' },
 ]
 
 export default function Example() {
@@ -67,7 +67,7 @@ export default function Example() {
               Inicio
             </a>
             <Popover className="relative">
-              <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+              <PopoverButton className="flex focus:outline-none items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
                 Productos
                 <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
               </PopoverButton>
@@ -194,7 +194,7 @@ export default function Example() {
                     Preguntas Frecuentes
                   </a>
                   <a
-                    href="#"
+                    href="/contacto"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Contacto

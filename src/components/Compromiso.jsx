@@ -8,7 +8,7 @@ export default function Compromiso() {
             <div className="w-full h-[80%] flex justify-end">
                 <div className="flex items-center justify-between w-[90%] relative">
                     <div className="w-[40%] h-[50%] flex justify-evenly flex-col">
-                        <h3>Cottonier y su compromiso.</h3>
+                        <h3 className="text-[35px] ">Cottonier y su compromiso.</h3>
                         <p>
                             Con más de cinco décadas de trayectoria en el sector, nos
                             enorgullecemos de contar con una red de proveedores sólidos en
@@ -28,14 +28,16 @@ export default function Compromiso() {
                 </div>
             </div>
             {/* Contenedor "Ofrecemos" con fondo blur */}
-            <div className="absolute bottom-[30px] left-[45%] justify-center pl-[70px] rounded-l-[40px] w-[100%] h-[30vh] bg-white/30 backdrop-blur p-4 rounded-md flex flex-col  ">
-                <h3 className="text-lg font-semibold w-[30%]">Ofrecemos</h3>
-                <ul className="list-disc ml-4 w-[30%]">
+            <div className="absolute bottom-[30px]  left-[45%] justify-center pl-[70px] rounded-l-[40px] w-[55%] h-[30vh] bg-white/30 backdrop-blur p-4 rounded-md flex flex-col  ">
+               <div className="w-[100%]">
+                <h3 className="text-[20px] font-semibold w-[30%]">Ofrecemos</h3>
+                <ul className="list-disc ml-4 w-[100%] lg:w-[50%]">
                     <li>Poliéster fibra cortada en diversos títulos.</li>
                     <li>Poliéster texturizado para Overlock.</li>
                     <li>Hilos de algodón mercerizado y peinado.</li>
                     <li>Hilos de alta tenacidad (nylon).</li>
-                </ul>
+                </ul></div>
+                
             </div>
         </div>
     );

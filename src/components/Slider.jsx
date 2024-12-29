@@ -9,8 +9,8 @@ export default function Slider() {
       src: '/18.png',
       alt: 'Producto 1',
       info: {
-        left: ['Dato 1A', 'Dato 1B', 'Dato 1C'],
-        right: ['Dato 1D', 'Dato 1E', 'Dato 1F'],
+        left: ['REALTEX 120', '100% POLIESTER FIBRA CORTADA', 'HILO DE RECTA'],
+        right: ['CONOS DE 4000MTS', 'CARTA DE 180 COLORES', 'Dato 1F'],
       },
     },
     {
@@ -18,8 +18,8 @@ export default function Slider() {
       src: '/11.png',
       alt: 'Producto 2',
       info: {
-        left: ['Dato 2A', 'Dato 2B', 'Dato 2C'],
-        right: ['Dato 2D', 'Dato 2E', 'Dato 2F'],
+        left: ['REALTEX 20/3', '100% POLIESTER FIBRA CORTADA', 'HILO DE JEAN'],
+        right: ['CONOS DE 3000MTS', 'CARTA DE 30 COLORES', 'Dato 2F'],
       },
     },
     {
@@ -27,8 +27,8 @@ export default function Slider() {
       src: '/4.png',
       alt: 'Producto 3',
       info: {
-        left: ['Dato 3A', 'Dato 3B', 'Dato 3C'],
-        right: ['Dato 3D', 'Dato 3E', 'Dato 3F'],
+        left: ['AJS 150 ', '100% POLIESTER FIBRA CONTINUA', 'HILO DE OVERLOCK'],
+        right: ['CONOS DE 400GRS', 'CARTA DE 15 COLORES', 'Dato 3F'],
       },
     },
   ];
