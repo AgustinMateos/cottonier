@@ -120,6 +120,7 @@ const PoliesterFibraCortada = () => {
                                         className="object-cover h-[40vh] aspect-auto transition-opacity duration-500"
                                         alt="Imagen del producto"
                                     />
+                                    <div className="w-full h-[50px] flex items-center justify-center"> <div className="w-[20%] flex "><div className="   h-[20px] bg-slate-400 w-[20px]"></div> <div className="   h-[20px] bg-slate-400 w-[20px]"></div></div>  </div>
                                 </div>
                             </div>
                         </div>

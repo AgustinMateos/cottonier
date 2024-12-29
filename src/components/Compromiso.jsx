@@ -5,9 +5,9 @@ import Image from "next/image";
 export default function Compromiso() {
     return (
         <div className="relative h-[699px] w-[100%] bg-[#ECECEC]">
-            <div className="w-full h-[80%] flex flex-col justify-end">
-                <div className="flex items-center flex-col justify-between w-[90%] relative">
-                    <div className="w-[90%] lg:w-[40%] h-[50%] flex justify-evenly flex-col">
+            <div className="w-full h-[80%] flex flex-col lg:flex-row justify-end">
+                <div className="flex items-center flex-col lg:flex-row justify-between w-[90%] relative">
+                    <div className="w-[90%] lg:w-[40%] h-[50%] flex justify-evenly flex-col ">
                         <h3 className="text-[35px] ">Cottonier y su compromiso.</h3>
                         <p>
                             Con más de cinco décadas de trayectoria en el sector, nos

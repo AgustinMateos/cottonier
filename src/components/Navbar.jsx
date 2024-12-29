@@ -24,7 +24,7 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const products = [
-    { name: 'Poliester Fibra Cortada', description: 'Títulos: 120(40/2) - 90(30/2) - (75(24/2) - 20/3', href: '/poliesterFibraCortada', icon: '/iconoCono.svg'  },
+    { name: 'Poliester Fibra Cortada', description: 'Títulos: 120(40/2) - 90(30/2) - 75(24/2) - 20/3', href: '/poliesterFibraCortada', icon: '/iconoCono.svg'  },
     { name: 'Poliester Fibra Continua', description: 'Título: 150/1', href: '#', icon: '/iconoCono.svg' },
     { name: 'Algodón peinado apto para teñir', description: 'Títulos: 50(30/2) - 50(24/2) - 24/3 - 7/3', href: '#', icon: '/iconoCono.svg' },
     { name: 'Algodón mercerizado', description: 'Títulos: 80(50/2) - 52(32/2) - 40(24/2) - 24/3', href: '#', icon: '/iconoCono.svg' },
