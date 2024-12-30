@@ -29,7 +29,7 @@ export default function Contacto() {
           </div>
         ))}
       </div>
-      <div className="w-full flex flex-wrap md:flex-nowrap justify-evenly p-[20px]">
+      <div className="w-full flex flex-col-reverse sm:flex-row sm:h-auto flex-wrap md:flex-nowrap justify-evenly h-[100vh] p-[20px]">
         {/* Mapa */}
         <div className="w-full md:w-[40%] h-[400px] md:h-auto ">
           <iframe

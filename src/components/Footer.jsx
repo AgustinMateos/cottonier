@@ -38,22 +38,22 @@ export default function Footer() {
             
 
             <div className="flex flex-col xs:items-start sm:flex-row lg:flex-row lg:space-x-4 gap-4 lg:w-[850px]">
-              <Link className="lg:w-[120px]" href={"#AboutUs"}>
+              <Link className="lg:w-[120px]" href={"/productos"}>
                 <p className="font-archivo hover:font-bold hover:text-white">
                   Productos
                 </p>
               </Link>
-              <Link className="lg:w-[120px]" href={"#WhoWeAre"}>
+              <Link className="lg:w-[120px]" href={"/nosotros"}>
                 <p className="font-archivo hover:font-bold hover:text-white">
                 Nosotros
                 </p>
               </Link>
-              <Link className="lg:w-[220px]" href={"#SustainableFuels"}>
+              <Link className="lg:w-[220px]" href={"/preguntasFrecuentes"}>
                 <p className="font-archivo hover:font-bold hover:text-white">
                  Preguntas Frecuentes
                 </p>
               </Link>
-              <Link className="lg:w-[180px]" href={"#OurProjects"}>
+              <Link className="lg:w-[180px]" href={"/contacto"}>
                 <p className="font-archivo hover:font-bold hover:text-white">
                  Contacto
                 </p>
