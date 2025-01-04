@@ -20,8 +20,8 @@ export default function Contacto() {
   ];
 
   return (
-    <div className="bg-[#ECECEC]">
-      <div className="w-full flex flex-row flex-wrap justify-around h-[30vh] items-center ">
+    <div className="bg-[#ECECEC] pt-[60px]">
+      <div className="w-full flex flex-row flex-wrap justify-around h-[80vh] md:h-[30vh] items-center ">
         {items.map((item, index) => (
           <div key={index} className="flex flex-col text-center items-center">
             <Image src={item.src} alt={item.alt} width={50} height={50} />
@@ -29,7 +29,7 @@ export default function Contacto() {
           </div>
         ))}
       </div>
-      <div className="w-full flex flex-col-reverse sm:flex-row sm:h-auto flex-wrap md:flex-nowrap justify-evenly h-[100vh] p-[20px]">
+      <div className="w-full flex flex-col-reverse sm:flex-row sm:h-auto flex-wrap md:flex-nowrap justify-evenly min-h-[100vh] p-[20px]">
         {/* Mapa */}
         <div className="w-full md:w-[40%] h-[400px] md:h-auto ">
           <iframe
