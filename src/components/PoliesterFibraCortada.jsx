@@ -15,11 +15,9 @@ const PoliesterFibraCortada = () => {
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const images = [
-        "/4.png",
-        "/11.png",
-    ];
+    const images = ["/4.png", "/11.png"];
 
     const data = {
         "120(40/2)": {
@@ -57,9 +55,7 @@ const PoliesterFibraCortada = () => {
             setIsSmallScreen(window.innerWidth < 640); // sm breakpoint
         };
 
-        // Inicializar el tamaño de la pantalla
         handleResize();
-
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -86,26 +82,53 @@ const PoliesterFibraCortada = () => {
                 <div className="w-full flex items-center flex-col h-auto md:h-[80vh] justify-between">
                     <h4 className="w-[80%] h-[10vh] md:h-[5vh] text-[20px]">Detalles de productos</h4>
                     {isSmallScreen ? (
-                        <select
-                            className="w-[80%] p-2 border rounded"
-                            value={activeData.titulo}
-                            onChange={(e) => setActiveData(data[e.target.value])}
-                        >
-                            {Object.keys(data).map((title) => (
-                                <option key={title} value={title}>
-                                    {title}
-                                </option>
-                            ))}
-                        </select>
+                        <div className="relative w-[80%]">
+                            <button
+                                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                className="w-full p-2 border rounded flex justify-between items-center bg-white"
+                            >
+                                {activeData.titulo}
+                                <svg
+                                    className={`w-4 h-4 transform ${isDropdownOpen ? "rotate-180" : ""} transition-transform`}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M19 9l-7 7-7-7"
+                                    />
+                                </svg>
+                            </button>
+                            {isDropdownOpen && (
+                                <ul className="absolute w-full mt-2 bg-white border rounded shadow-md">
+                                    {Object.keys(data).map((title) => (
+                                        <li
+                                            key={title}
+                                            className={`p-2 cursor-pointer hover:bg-gray-200 ${
+                                                activeData.titulo === title ? "bg-gray-100 font-semibold" : ""
+                                            }`}
+                                            onClick={() => {
+                                                setActiveData(data[title]);
+                                                setIsDropdownOpen(false);
+                                            }}
+                                        >
+                                            {title}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
                     ) : (
                         <ul className="flex w-full flex-row flex-wrap items-center text-center h-[40vh] md:h-[10vh] justify-evenly">
                             {Object.keys(data).map((title) => (
                                 <li key={title}>
                                     <a
                                         className={`h-[50px] w-[200px] flex items-center justify-center text-white border-t-[#bdbdbd] rounded-[20px] ${
-                                            activeData.titulo === title
-                                                ? "bg-[#0c0c0c] text-white"
-                                                : "bg-[#bdbdbd]"
+                                            activeData.titulo === title ? "bg-[#0c0c0c] text-white" : "bg-[#bdbdbd]"
                                         }`}
                                         href="#"
                                         onClick={(e) => {
@@ -119,7 +142,7 @@ const PoliesterFibraCortada = () => {
                             ))}
                         </ul>
                     )}
-                    <div className="flex flex-col-reverse md:flex-col items-center justify-between md:justify-center w-full  max-h-[160vh] md:h-[57vh]">
+                    <div className="flex flex-col-reverse md:flex-col items-center justify-between md:justify-center w-full max-h-[160vh] md:h-[57vh]">
                         <div className="flex flex-col-reverse sm:flex-row">
                             <div className="flex w-[100%] md:w-[50%] flex-col">
                                 <div className="h-[70vh] md:h-[40vh] flex justify-end">
@@ -138,7 +161,7 @@ const PoliesterFibraCortada = () => {
                             </div>
                             <div>
                                 <Image
-                                    src={activeData.images[currentImageIndex]} // Selecciona la imagen actual del array
+                                    src={activeData.images[currentImageIndex]}
                                     width={600}
                                     height={400}
                                     className="object-cover h-[40vh] aspect-auto transition-opacity duration-500"
@@ -151,9 +174,7 @@ const PoliesterFibraCortada = () => {
                                                 key={index}
                                                 onClick={() => setCurrentImageIndex(index)}
                                                 className={`h-[20px] w-[20px] rounded-full ${
-                                                    currentImageIndex === index
-                                                        ? "bg-[#0c0c0c]"
-                                                        : "bg-[#bdbdbd]"
+                                                    currentImageIndex === index ? "bg-[#0c0c0c]" : "bg-[#bdbdbd]"
                                                 } cursor-pointer`}
                                             />
                                         ))}
@@ -169,4 +190,3 @@ const PoliesterFibraCortada = () => {
 };
 
 export default PoliesterFibraCortada;
-
