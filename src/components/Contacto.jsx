@@ -29,7 +29,7 @@ export default function Contacto() {
           </div>
         ))}
       </div>
-      <div className="w-full flex flex-col-reverse sm:flex-row sm:h-auto flex-wrap md:flex-nowrap justify-evenly min-h-[100vh] p-[20px]">
+      <div className="w-full flex flex-col-reverse sm:flex-row sm:h-auto flex-wrap md:flex-nowrap justify-evenly min-h-[150vh] md:min-h-[50vh] p-[20px]">
         {/* Mapa */}
         <div className="w-full md:w-[40%] h-[400px] md:h-auto ">
           <iframe
@@ -44,7 +44,7 @@ export default function Contacto() {
         </div>
 
         {/* Formulario */}
-        <div className="w-full md:w-[40%] p-6 bg-white rounded-[20px] ">
+        <div className="w-full h-[60%] md:w-[40%] p-6 bg-white rounded-[20px] ">
           <form className="flex flex-col space-y-4">
             <div>
               <label

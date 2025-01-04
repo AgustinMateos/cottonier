@@ -144,7 +144,7 @@ const PoliesterFibraCortada = () => {
                     )}
                     <div className="flex flex-col-reverse md:flex-col items-center justify-between md:justify-center w-full max-h-[160vh] md:h-[57vh]">
                         <div className="flex flex-col-reverse sm:flex-row">
-                            <div className="flex w-[100%] md:w-[50%] flex-col">
+                            <div className="flex w-[90%] md:w-[50%] flex-col">
                                 <div className="h-[55vh] md:h-[40vh] flex justify-end">
                                     <div className="p-[20px] md:p-[40px] flex items-center flex-col justify-center bg-[#FAFAFA] rounded-t-[20px] sm:rounded-t-[0px] md:rounded-r-[20px]">
                                         <h3 className="w-[100%] h-[20vh]">Título: {activeData.titulo}</h3>
