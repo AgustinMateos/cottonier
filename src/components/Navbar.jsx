@@ -39,15 +39,15 @@ export default function Example() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        <div className="flex lg:flex-1 bg-white">
+        <div className="flex lg:flex-1 bg-blue">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Cottonier S.R.L.</span>
             <Image
-              src="/logo.svg"
+              src="/Logo.svg"
               alt="Cottonier S.R.L."
               width={192}
               height={48}
-              priority
+              
             />
           </a>
         </div>
@@ -141,7 +141,7 @@ export default function Example() {
               <span className="sr-only">Cottonier S.R.L.</span>
               <Image
                 alt="image cottonier"
-                src="/logo.svg"
+                src="/Logo.svg"
                 height={120}
                 width={140}
                 className="h-auto w-auto"
