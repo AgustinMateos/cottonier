@@ -1,5 +1,5 @@
 'use client'
-
+import Image from 'next/image'
 import { useState } from 'react'
 import {
   Dialog,
@@ -20,7 +20,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 const products = [
-  { name: 'Poliester Fibra Cortada', description: 'Títulos: 120(40/2) - 90(30/2) - 75(24/2) - 20/3', href: '/poliesterFibraCortada', icon: '/iconoCono.svg'  },
+  { name: 'Poliester Fibra Cortada', description: 'Títulos: 120(40/2) - 90(30/2) - 75(24/2) - 20/3', href: '/poliesterFibraCortada', icon: '/iconoCono.svg' },
   { name: 'Poliester Fibra Continua', description: 'Título: 150/1', href: '#', icon: '/iconoCono.svg' },
   { name: 'Algodón peinado apto para teñir', description: 'Títulos: 50(30/2) - 50(24/2) - 24/3 - 7/3', href: '#', icon: '/iconoCono.svg' },
   { name: 'Algodón mercerizado', description: 'Títulos: 80(50/2) - 52(32/2) - 40(24/2) - 24/3', href: '#', icon: '/iconoCono.svg' },
@@ -42,7 +42,13 @@ export default function Example() {
         <div className="flex lg:flex-1 bg-white">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Cottonier S.R.L.</span>
-            <img alt="" src="/logo.svg" className="h-[3rem] w-auto" />
+            <Image
+              src="/logo.svg"
+              alt="Cottonier S.R.L."
+              width={192}
+              height={48}
+              priority
+            />
           </a>
         </div>
         <div className="flex lg:hidden">

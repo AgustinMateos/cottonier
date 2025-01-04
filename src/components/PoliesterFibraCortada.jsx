@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,6 +14,7 @@ const PoliesterFibraCortada = () => {
     });
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     const images = [
         "/4.png",
@@ -51,6 +53,18 @@ const PoliesterFibraCortada = () => {
     };
 
     useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 640); // sm breakpoint
+        };
+
+        // Inicializar el tamaño de la pantalla
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
         }, 6000);
@@ -59,7 +73,7 @@ const PoliesterFibraCortada = () => {
     }, [images.length]);
 
     return (
-        <div className="min-h-[50vh] bg-[#ECECEC] pt-[60px]">
+        <div className="min-h-screen bg-[#ECECEC] pt-[60px]">
             <div className="w-full flex flex-col items-center h-[70vh] md:h-[30vh] justify-center ">
                 <div className="w-[80%] h-[90%] md:h-[50%] flex flex-col justify-around">
                     <h1 className="text-[40px]">Poliester Fibra Cortada</h1>
@@ -71,31 +85,45 @@ const PoliesterFibraCortada = () => {
             <div>
                 <div className="w-full flex items-center flex-col h-[115vh] md:h-[80vh] justify-between">
                     <h4 className="w-[80%] h-[10vh] md:h-[5vh] text-[20px]">Detalles de productos</h4>
-                    <ul className="flex w-full flex-row flex-wrap items-center text-center h-[40vh] md:h-[10vh] justify-evenly">
-                        {Object.keys(data).map((title) => (
-                            <li key={title}>
-                                <a
-                                    className={`h-[50px] w-[200px] flex items-center justify-center text-white border-t-[#bdbdbd] rounded-[20px] ${
-                                        activeData.titulo === title
-                                            ? "bg-[#0c0c0c] text-white"
-                                            : "bg-[#bdbdbd]"
-                                    }`}
-                                    href="#"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        setActiveData(data[title]);
-                                    }}
-                                >
+                    {isSmallScreen ? (
+                        <select
+                            className="w-[80%] p-2 border rounded"
+                            value={activeData.titulo}
+                            onChange={(e) => setActiveData(data[e.target.value])}
+                        >
+                            {Object.keys(data).map((title) => (
+                                <option key={title} value={title}>
                                     {title}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
+                                </option>
+                            ))}
+                        </select>
+                    ) : (
+                        <ul className="flex w-full flex-row flex-wrap items-center text-center h-[40vh] md:h-[10vh] justify-evenly">
+                            {Object.keys(data).map((title) => (
+                                <li key={title}>
+                                    <a
+                                        className={`h-[50px] w-[200px] flex items-center justify-center text-white border-t-[#bdbdbd] rounded-[20px] ${
+                                            activeData.titulo === title
+                                                ? "bg-[#0c0c0c] text-white"
+                                                : "bg-[#bdbdbd]"
+                                        }`}
+                                        href="#"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            setActiveData(data[title]);
+                                        }}
+                                    >
+                                        {title}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                     <div className="flex flex-col-reverse md:flex-col items-center justify-between md:justify-center w-full  h-[160vh] md:h-[57vh]">
                         <div className="flex flex-col-reverse sm:flex-row">
                             <div className="flex w-[100%] md:w-[50%] flex-col">
                                 <div className="h-[40vh] flex justify-end">
-                                    <div className="p-[40px] flex items-center flex-col justify-center h-[40vh] bg-[#FAFAFA] rounded-t-[20px] sm:rounded-t-[0px] md:rounded-r-[20px]">
+                                    <div className="p-[40px] flex items-center flex-col justify-center bg-[#FAFAFA] rounded-t-[20px] sm:rounded-t-[0px] md:rounded-r-[20px]">
                                         <h3 className="w-[100%] h-[20vh]">Título: {activeData.titulo}</h3>
                                         <h4 className="w-[100%] h-[20vh]">{activeData.utilizado}</h4>
                                         <div className="flex justify-between w-[100%]">
@@ -109,14 +137,13 @@ const PoliesterFibraCortada = () => {
                                 </div>
                             </div>
                             <div>
-                            <Image
-    src={activeData.images[currentImageIndex]} // Selecciona la imagen actual del array
-    width={600}
-    height={400}
-    className="object-cover h-[40vh] aspect-auto transition-opacity duration-500"
-    alt="Imagen del producto"
-/>
-
+                                <Image
+                                    src={activeData.images[currentImageIndex]} // Selecciona la imagen actual del array
+                                    width={600}
+                                    height={400}
+                                    className="object-cover h-[40vh] aspect-auto transition-opacity duration-500"
+                                    alt="Imagen del producto"
+                                />
                                 <div className="w-full h-[50px] flex items-center justify-center">
                                     <div className="w-[20%] flex justify-evenly">
                                         {images.map((_, index) => (
@@ -142,6 +169,7 @@ const PoliesterFibraCortada = () => {
 };
 
 export default PoliesterFibraCortada;
+
 
 
 // 'use client'
