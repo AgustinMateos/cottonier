@@ -61,7 +61,7 @@ const PoliesterFibraCortada = () => {
     return (
         <div className="min-h-[50vh] bg-[#ECECEC] pt-[60px]">
             <div className="w-full flex flex-col items-center h-[70vh] md:h-[30vh] justify-center ">
-                <div className="w-[80%] h-[50%] flex flex-col justify-around">
+                <div className="w-[80%] h-[90%] md:h-[50%] flex flex-col justify-around">
                     <h1 className="text-[40px]">Poliester Fibra Cortada</h1>
                     <p>
                         Nuestro hilo de poliéster 100% fibra cortada se distingue por su técnica de unión a aire (air spliced), lo que minimiza prácticamente la presencia de nudos. Su hilatura es similar al algodón, ofreciendo una suavidad excepcional gracias a un tratamiento especial que protege tanto el hilo como las máquinas de coser del desgaste. Además, cuenta con elongación controlada, garantizando un rendimiento óptimo en todas tus aplicaciones de costura.
