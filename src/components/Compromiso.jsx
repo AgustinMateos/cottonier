@@ -23,6 +23,7 @@ export default function Compromiso() {
                             width={683}
                             height={448}
                             className="rounded-l-[10px]"
+                            alt="imagen cottonier"
                         />
                     </div>
                 </div>

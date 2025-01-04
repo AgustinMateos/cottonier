@@ -106,7 +106,9 @@ export default function Example() {
                     href={item.href}
                     className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                   >
-                    <img
+                    <Image
+                    width={140}
+                    height={120}
                       src={item.icon}
                       alt={`${item.name} icon`}
                       className="h-5 w-5 flex-none"
@@ -137,10 +139,12 @@ export default function Example() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Cottonier S.R.L.</span>
-              <img
-                alt=""
-                src="logo.svg"
-                className="h-8 w-auto"
+              <Image
+                alt="image cottonier"
+                src="/logo.svg"
+                height={120}
+                width={140}
+                className="h-auto w-auto"
               />
             </a>
             <button

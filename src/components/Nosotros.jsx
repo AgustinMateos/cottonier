@@ -5,7 +5,7 @@ export default function Nosotros ()  {
     <div className="w-full min-h-[120vh] bg-[#ECECEC] flex items-center flex-col">
         <div className="flex flex-col-reverse items-center lg:flex-row ">
             <div className="w-full lg:w-[50%] rounded-[20px] ">
-                <Image className=" rounded-r-[20px] " src='/nosotros1.svg' height={266} width={650}/></div>
+                <Image className=" rounded-r-[20px] " alt="imagen" src='/nosotros1.svg' height={266} width={650}/></div>
             <div className="w-[90%] lg:w-[40%] h-[400px] flex flex-col justify-evenly">
                 <h1>Hilos Cottonier</h1>
                 <p>Desde 1965, nos dedicamos a la fabricación de hilos para coser de alta calidad. Ubicados en el emblemático barrio de Caballito, contamos con una fábrica equipada con tecnología avanzada que nos permite mantener un stock permanente y ofrecer una amplia variedad de productos.</p>
