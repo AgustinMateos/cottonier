@@ -7,9 +7,9 @@ import Link from "next/link";
 const PoliesterFibraCortada = () => {
     const [activeData, setActiveData] = useState({
         titulo: "120(40/2)",
-        bobina: "CONOS DE 4000MTS",
+        bobina: "Conos de 4000mts.",
         catalogo: "Catálogo de colores: 180 colores",
-        utilizado: "UTILIZADO PARA LA CONFECCIÓN DE PRENDAS LIVIANAS COMO GUARDAPOLVOS, CAMISERIA, REMERAS, LENCERÍA, MEDIAS, ROPA INTERIOR, ROPA DE TRABAJO, ROPA DEPORTIVA, CORBATAS, ROPA BLANCA, POLLERAS, DELANTALES.",
+        utilizado: "Utilizado para la confección de prendas livianas como guardapolvos, comisaria, remeras, lenceria, medias, ropa interior, ropa de trabajo, ropa deportiva, corbatas, ropa blanca, polleras y delantales.",
         images: ["/4.png", "/11.png"],
     });
 
@@ -22,30 +22,30 @@ const PoliesterFibraCortada = () => {
     const data = {
         "120(40/2)": {
             titulo: "120(40/2)",
-            bobina: "CONOS DE 4000MTS",
+            bobina: "Conos de 4000mts.",
             catalogo: "Catálogo de colores: 180 colores",
-            utilizado: "UTILIZADO PARA LA CONFECCIÓN DE PRENDAS LIVIANAS COMO GUARDAPOLVOS, CAMISERIA, REMERAS, LENCERÍA, MEDIAS, ROPA INTERIOR, ROPA DE TRABAJO, ROPA DEPORTIVA, CORBATAS, ROPA BLANCA, POLLERAS, DELANTALES.",
+            utilizado: "Utilizado para la confección de prendas livianas como guardapolvos, comisaria, remeras, lenceria, medias, ropa interior, ropa de trabajo, ropa deportiva, corbatas, ropa blanca, polleras y delantales.",
             images: ["/4.png", "/11.png"],
         },
         "90(30/2)": {
             titulo: "90(30/2)",
-            bobina: "CONOS DE 5000MTS",
-            catalogo: "CARTA DE 55 COLORES",
-            utilizado: "UTILIZADO PARA LA CONFECCIÓN DE SACOS, PANTALONES, ROPA DE TRABAJO, CORPIÑOS, BODIES, SOMBREROS, TRAJES DE BAÑO, SABANAS Y FUNDAS, BANDERINES, JOGGINS, CALZONCILLOS, ROPA DEPORTIVA, ATRAQUES Y TODAS COSTURAS QUE REQUIERA UN HILO MAS GRUESO QUE EL 120.",
+            bobina: "Conos de 5000mts.",
+            catalogo: "Carta de 55 colores",
+            utilizado: "Utilizado para la confección de sacos, pantalones, ropa de trabajo, corpiños, bodies, sombreros, trajes de baño, sábanas y fundas, banderines, joggins, calzoncillos, ropa deportiva, atraques y todas costuras que requiera un hilo más grueso que el 120.",
             images: ["/realtex.svg", "/11.png"],
         },
         "75(24/2)": {
             titulo: "75(24/2)",
-            bobina: "CONOS DE 5000MTS",
-            catalogo: "Catálogo de colores: 33 COLORES",
-            utilizado: "UTILIZADO PARA LA CONFECCIÓN DE IMPERMEABLES, CHALECOS, CAMISAS, POLLERAS DE JEAN, GUANTES, CUBRECAMAS, GORRAS, COLCHONES, CALZADO DEPORTIVO LIVIANO, CAMPERAS, TAPICERÍA LIVIANA, ATRAQUES, ROPAS DE ESQUÍ, SOMBREROS. ADEMAS, ES IDEAL PARA ACOMPAÑAR AL TITULO 20/3.",
+            bobina: "Conos de 5000mts.",
+            catalogo: "Catálogo de colores: 33 Colores",
+            utilizado: "Utilizado para la confección de impermeables, chalecos, camisas, polleras de jean, guantes, cubrecamas, gorras, colchones, calzado deportivo liviano, camperas, tapicería liviana, atraques, ropas de esquí, sombreros. además, es ideal para acompañar al título 20/3.",
             images: ["/4.png", "/11.png"],
         },
         "20/3": {
             titulo: "20/3",
-            bobina: "CONOS DE 3000MTS",
+            bobina: "Conos de 3000mts.",
             catalogo: "Catálogo de colores: 33 colores",
-            utilizado: "UTILIZADO PARA COSTURAS DE JEAN (ABARCA TODO TIPO DE PRENDA DE JEAN), ROPA DE MONTAÑA, ARTÍCULOS DE CUERO, TAPICERÍA, FUNDAS PARA AUTO, CINTURONES, UNIFORMES DE TELA PESADA, ROPA DE ABRIGO.",
+            utilizado: "Utilizado para costuras de jean (abarca todo tipo de prenda de jean), ropa de montaña, artículos de cuero, tapicería, fundas para auto, cinturones, uniformes de tela pesada, ropa de abrigo.",
             images: ["/4.png", "/18.png"],
         },
     };
@@ -145,7 +145,7 @@ const PoliesterFibraCortada = () => {
                     <div className="flex flex-col-reverse md:flex-col items-center justify-between md:justify-center w-full max-h-[160vh] md:h-[57vh]">
                         <div className="flex flex-col-reverse sm:flex-row">
                             <div className="flex w-[100%] md:w-[50%] flex-col">
-                                <div className="h-[70vh] md:h-[40vh] flex justify-end">
+                                <div className="h-[55vh] md:h-[40vh] flex justify-end">
                                     <div className="p-[20px] md:p-[40px] flex items-center flex-col justify-center bg-[#FAFAFA] rounded-t-[20px] sm:rounded-t-[0px] md:rounded-r-[20px]">
                                         <h3 className="w-[100%] h-[20vh]">Título: {activeData.titulo}</h3>
                                         <h4 className="w-[100%] h-[50vh]">{activeData.utilizado}</h4>

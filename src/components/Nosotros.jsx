@@ -20,7 +20,7 @@ export default function Nosotros ()  {
                 <p>Trabajamos con dedicación para ofrecer soluciones que superen las expectativas de nuestros clientes y contribuyan al crecimiento del sector textil.</p>
                
             </div>
-            <div className=""><Image className="rounded-l-[20px]" src='/nosotros2.svg' height={566} width={674}/></div>
+            <div className=""><Image className="rounded-l-[20px]" src='/nosotros2.svg' height={566} width={674} alt="cottonier2"/></div>
             
         </div>
     </div>
