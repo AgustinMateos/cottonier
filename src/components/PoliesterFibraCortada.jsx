@@ -74,7 +74,7 @@ const PoliesterFibraCortada = () => {
 
     return (
         <div className="min-h-screen bg-[#ECECEC] pt-[60px]">
-            <div className="w-full flex flex-col items-center h-[70vh] md:h-[30vh] justify-center ">
+            <div className="w-full flex flex-col items-center h-[80vh] md:h-[30vh] justify-center ">
                 <div className="w-[80%] h-[90%] md:h-[50%] flex flex-col justify-around">
                     <h1 className="text-[40px]">Poliester Fibra Cortada</h1>
                     <p>
@@ -83,7 +83,7 @@ const PoliesterFibraCortada = () => {
                 </div>
             </div>
             <div>
-                <div className="w-full flex items-center flex-col h-[115vh] md:h-[80vh] justify-between">
+                <div className="w-full flex items-center flex-col h-auto md:h-[80vh] justify-between">
                     <h4 className="w-[80%] h-[10vh] md:h-[5vh] text-[20px]">Detalles de productos</h4>
                     {isSmallScreen ? (
                         <select
@@ -122,10 +122,10 @@ const PoliesterFibraCortada = () => {
                     <div className="flex flex-col-reverse md:flex-col items-center justify-between md:justify-center w-full  max-h-[160vh] md:h-[57vh]">
                         <div className="flex flex-col-reverse sm:flex-row">
                             <div className="flex w-[100%] md:w-[50%] flex-col">
-                                <div className="h-[40vh] flex justify-end">
-                                    <div className="p-[40px] flex items-center flex-col justify-center bg-[#FAFAFA] rounded-t-[20px] sm:rounded-t-[0px] md:rounded-r-[20px]">
+                                <div className="h-[70vh] md:h-[40vh] flex justify-end">
+                                    <div className="p-[20px] md:p-[40px] flex items-center flex-col justify-center bg-[#FAFAFA] rounded-t-[20px] sm:rounded-t-[0px] md:rounded-r-[20px]">
                                         <h3 className="w-[100%] h-[20vh]">Título: {activeData.titulo}</h3>
-                                        <h4 className="w-[100%] h-[20vh]">{activeData.utilizado}</h4>
+                                        <h4 className="w-[100%] h-[50vh]">{activeData.utilizado}</h4>
                                         <div className="flex justify-between w-[100%]">
                                             <p>{activeData.bobina}</p>
                                             <p>{activeData.catalogo}</p>
