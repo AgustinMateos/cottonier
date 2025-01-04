@@ -9,6 +9,7 @@ const PoliesterFibraCortada = () => {
         bobina: "CONOS DE 4000MTS",
         catalogo: "Catálogo de colores: 180 colores",
         utilizado: "UTILIZADO PARA LA CONFECCIÓN DE PRENDAS LIVIANAS COMO GUARDAPOLVOS, CAMISERIA, REMERAS, LENCERÍA, MEDIAS, ROPA INTERIOR, ROPA DE TRABAJO, ROPA DEPORTIVA, CORBATAS, ROPA BLANCA, POLLERAS, DELANTALES.",
+        images: ["/4.png", "/11.png"],
     });
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -24,24 +25,28 @@ const PoliesterFibraCortada = () => {
             bobina: "CONOS DE 4000MTS",
             catalogo: "Catálogo de colores: 180 colores",
             utilizado: "UTILIZADO PARA LA CONFECCIÓN DE PRENDAS LIVIANAS COMO GUARDAPOLVOS, CAMISERIA, REMERAS, LENCERÍA, MEDIAS, ROPA INTERIOR, ROPA DE TRABAJO, ROPA DEPORTIVA, CORBATAS, ROPA BLANCA, POLLERAS, DELANTALES.",
+            images: ["/4.png", "/11.png"],
         },
         "90(30/2)": {
             titulo: "90(30/2)",
             bobina: "CONOS DE 5000MTS",
             catalogo: "CARTA DE 55 COLORES",
             utilizado: "UTILIZADO PARA LA CONFECCIÓN DE SACOS, PANTALONES, ROPA DE TRABAJO, CORPIÑOS, BODIES, SOMBREROS, TRAJES DE BAÑO, SABANAS Y FUNDAS, BANDERINES, JOGGINS, CALZONCILLOS, ROPA DEPORTIVA, ATRAQUES Y TODAS COSTURAS QUE REQUIERA UN HILO MAS GRUESO QUE EL 120.",
+            images: ["/realtex.svg", "/11.png"],
         },
         "75(24/2)": {
             titulo: "75(24/2)",
             bobina: "CONOS DE 5000MTS",
             catalogo: "Catálogo de colores: 33 COLORES",
             utilizado: "UTILIZADO PARA LA CONFECCIÓN DE IMPERMEABLES, CHALECOS, CAMISAS, POLLERAS DE JEAN, GUANTES, CUBRECAMAS, GORRAS, COLCHONES, CALZADO DEPORTIVO LIVIANO, CAMPERAS, TAPICERÍA LIVIANA, ATRAQUES, ROPAS DE ESQUÍ, SOMBREROS. ADEMAS, ES IDEAL PARA ACOMPAÑAR AL TITULO 20/3.",
+            images: ["/4.png", "/11.png"],
         },
         "20/3": {
             titulo: "20/3",
             bobina: "CONOS DE 3000MTS",
             catalogo: "Catálogo de colores: 33 colores",
             utilizado: "UTILIZADO PARA COSTURAS DE JEAN (ABARCA TODO TIPO DE PRENDA DE JEAN), ROPA DE MONTAÑA, ARTÍCULOS DE CUERO, TAPICERÍA, FUNDAS PARA AUTO, CINTURONES, UNIFORMES DE TELA PESADA, ROPA DE ABRIGO.",
+            images: ["/4.png", "/18.png"],
         },
     };
 
@@ -55,7 +60,7 @@ const PoliesterFibraCortada = () => {
 
     return (
         <div className="min-h-[50vh] bg-[#ECECEC]">
-            <div className="w-full flex flex-col items-center h-[30vh] justify-center">
+            <div className="w-full flex flex-col items-center h-[70vh] md:h-[30vh] justify-center">
                 <div className="w-[80%] h-[50%] flex flex-col justify-around">
                     <h1 className="text-[40px]">Poliester Fibra Cortada</h1>
                     <p>
@@ -64,9 +69,9 @@ const PoliesterFibraCortada = () => {
                 </div>
             </div>
             <div>
-                <div className="w-full flex items-center flex-col">
+                <div className="w-full flex items-center flex-col h-[115vh] md:h-[80vh] justify-between">
                     <h4 className="w-[80%] h-[5vh] text-[20px]">Detalles de productos</h4>
-                    <ul className="flex w-full flex-row flex-wrap items-center text-center justify-evenly">
+                    <ul className="flex w-full flex-row flex-wrap items-center text-center h-[30vh] justify-evenly">
                         {Object.keys(data).map((title) => (
                             <li key={title}>
                                 <a
@@ -86,9 +91,9 @@ const PoliesterFibraCortada = () => {
                             </li>
                         ))}
                     </ul>
-                    <div className="flex flex-col-reverse md:flex-col items-center justify-center w-full h-[57vh]">
+                    <div className="flex flex-col-reverse md:flex-col items-center justify-center w-full  h-[160vh] md:h-[57vh]">
                         <div className="flex flex-col-reverse sm:flex-row">
-                            <div className="flex w-[50%] flex-col">
+                            <div className="flex w-[100%] md:w-[50%] flex-col">
                                 <div className="h-[30vh] flex justify-end">
                                     <div className="p-[40px] flex items-center flex-col justify-center h-[40vh] bg-[#FAFAFA] rounded-r-[20px]">
                                         <h3 className="w-[100%] h-[20vh]">Título: {activeData.titulo}</h3>
@@ -104,13 +109,14 @@ const PoliesterFibraCortada = () => {
                                 </div>
                             </div>
                             <div>
-                                <Image
-                                    src={images[currentImageIndex]}
-                                    width={600}
-                                    height={400}
-                                    className="object-cover h-[40vh] aspect-auto transition-opacity duration-500"
-                                    alt="Imagen del producto"
-                                />
+                            <Image
+    src={activeData.images[currentImageIndex]} // Selecciona la imagen actual del array
+    width={600}
+    height={400}
+    className="object-cover h-[40vh] aspect-auto transition-opacity duration-500"
+    alt="Imagen del producto"
+/>
+
                                 <div className="w-full h-[50px] flex items-center justify-center">
                                     <div className="w-[20%] flex justify-evenly">
                                         {images.map((_, index) => (
