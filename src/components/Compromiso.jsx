@@ -1,21 +1,38 @@
 'use client'
-
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 export default function Compromiso() {
   const [showOfrecemos, setShowOfrecemos] = useState(false);
+  const ofrecemosRef = useRef(null); // Ref para el div de "Ofrecemos"
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowOfrecemos(true);
-    }, 300); // Esperar 300ms antes de activar el estado
-    return () => clearTimeout(timer);
+    // Crear el IntersectionObserver
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        // Cambiar el estado solo cuando el 30% del div es visible
+        if (entry.isIntersecting) {
+          setShowOfrecemos(true);
+        } else {
+          setShowOfrecemos(false);
+        }
+      },
+      { threshold: 0.2 } // Umbral más bajo, 10% de visibilidad
+    );
+
+    // Observar el div "Ofrecemos"
+    if (ofrecemosRef.current) {
+      observer.observe(ofrecemosRef.current);
+    }
+
+    // Limpiar el observador cuando el componente se desmonte
+    return () => {
+      if (ofrecemosRef.current) {
+        observer.unobserve(ofrecemosRef.current);
+      }
+    };
   }, []);
-
-  useEffect(() => {
-    console.log("Estado showOfrecemos:", showOfrecemos);
-  }, [showOfrecemos]); // Verificar el estado cada vez que cambie
 
   return (
     <div className="relative h-[699px] w-[100%] bg-[#ECECEC]">
@@ -45,9 +62,15 @@ export default function Compromiso() {
 
       {/* Contenedor "Ofrecemos" con fondo blur */}
       <div
+        ref={ofrecemosRef} // Asignar la referencia aquí
         className={`${
           showOfrecemos ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         } absolute bottom-[30px] left-[5%] sm:left-[25%] lg:left-[45%] justify-center pl-[50px] sm:pl-[70px] rounded-l-[40px] w-[95%] sm:w-[75%] lg:w-[55%] h-[30vh] bg-white/30 backdrop-blur p-4 rounded-md flex flex-col transition-all duration-700 ease-in-out`}
+        style={{
+          transform: showOfrecemos ? 'translateX(0)' : 'translateX(0)', // Asegura que el div se mantenga visible
+          opacity: showOfrecemos ? 1 : 0, // Transición de opacidad
+          zIndex: showOfrecemos ? 10 : 0, // Asegura que el div esté encima de otros elementos
+        }}
       >
         <div className="w-[100%]">
           <h3 className="text-[20px] font-semibold w-[30%]">Ofrecemos</h3>
