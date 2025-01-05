@@ -1,11 +1,13 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Slider() {
   const slides = [
     {
       id: 1,
+      href: '/poliesterFibraCortada',
       src: '/18.png',
       alt: 'Producto 1',
       info: {
@@ -15,6 +17,7 @@ export default function Slider() {
     },
     {
       id: 2,
+      href: '/poliesterFibraCortada',
       src: '/11.png',
       alt: 'Producto 2',
       info: {
@@ -24,6 +27,7 @@ export default function Slider() {
     },
     {
       id: 3,
+      href: '/poliesterFibraCortada',
       src: '/4.png',
       alt: 'Producto 3',
       info: {
@@ -63,22 +67,45 @@ export default function Slider() {
   };
 
   return (
-    <div className="bg-[#ECECEC] w-full h-[90vh] flex flex-col items-center justify-center">
+    <div className="bg-[#ECECEC] w-full h-[95vh] flex flex-col items-center justify-center">
       {/* Aguja */}
       <div className="relative w-full h-[40vh] flex items-center justify-center">
         <div
-          className={`absolute top-[-14vh] w-full transition-transform duration-1000 ${
+          className={`absolute top-[-14vh] w-full hidden bl transition-transform duration-1000 ${
             showNeedle ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
           <Image className="w-full h-auto" width={600} height={150} src="/aguja.svg" alt="Aguja" />
         </div>
-        <div className="absolute top-5 text-2xl font-bold flex flex-col h-[100px] justify-around items-center" > <h3 className=" top-5 text-2xl font-bold">Nuestros productos más destacados</h3>
-        <p className=" top-5 text-2xl font-bold"> Estos son algunos de nuestros productos más elegidos por nuestros clientes.</p>
+        <div className="absolute top-5 text-2xl font-bold flex flex-col h-[100px] justify-around items-center" > <h3 className=" top-5 text-2xl ">Nuestros productos más destacados</h3>
+        <p className=" top-5 text-2xl text-center "> Estos son algunos de nuestros productos más elegidos por nuestros clientes.</p>
      </div>
         </div>
+        <div className="sm:hidden w-full overflow-x-scroll flex gap-4 px-4">
+  {slides.map((slide) => (
+    <Link
+     href={slide.href}
+      key={slide.id}
+      className="min-w-[80%] bg-white rounded-[20px] shadow-md p-4 flex flex-col items-center justify-center"
+    >
+      <Image
+        src={slide.src}
+        alt={slide.alt}
+        width={300}
+        height={300}
+        className="rounded-lg h-[60%] w-[100%] object-cover"
+      />
+      <div className="mt-4">
+        <h3 className="text-lg font-bold">{slide.info.left[0]}</h3>
+        <p className="text-sm">{slide.info.left[1]}</p>
+        <p className="text-sm">{slide.info.right[0]}</p>
+        <div className='pt-[10px]'><p>Ver más</p></div>
+      </div>
+    </Link>
+  ))}
+</div>
 
-      <div className="relative w-full flex justify-center items-center">
+      <div className="relative w-full sm:flex justify-center items-center hidden ">
         {/* Contenedor de información izquierda */}
         <div className="w-1/6 flex flex-col gap-4 text-center">
           {slides[currentIndex].info.left.map((info, idx) => (
@@ -123,7 +150,7 @@ export default function Slider() {
       </div>
 
       {/* Controles del slider */}
-      <div className="mt-5 flex justify-center gap-4">
+      <div className="mt-5 sm:flex justify-center gap-4 hidden ">
         <button
           onClick={handlePrev}
           className="bg-gray-700 text-white px-3 py-2 rounded hover:bg-gray-800"
