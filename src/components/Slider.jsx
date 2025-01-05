@@ -77,7 +77,7 @@ export default function Slider() {
         >
           <Image className="w-full h-auto" width={600} height={150} src="/aguja.svg" alt="Aguja" />
         </div>
-        <div className="absolute top-5 text-2xl font-bold flex flex-col h-[100px] justify-around items-center" > <h3 className=" top-5 text-2xl text-center">Nuestros productos más destacados</h3>
+        <div className="absolute top-5 text-2xl font-bold flex flex-col h-auto justify-around items-center" > <h3 className=" top-5 text-2xl text-center">Nuestros productos más destacados</h3>
         <p className=" top-5 text-2xl text-center "> Estos son algunos de nuestros productos más elegidos por nuestros clientes.</p>
      </div>
         </div>
