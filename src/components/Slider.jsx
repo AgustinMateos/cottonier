@@ -69,7 +69,7 @@ export default function Slider() {
   return (
     <div className="bg-[#ECECEC] w-full h-[95vh] flex flex-col items-center justify-center">
       {/* Aguja */}
-      <div className="relative w-full h-[40vh] flex items-center justify-center">
+      <div className="relative w-full h-[50vh] md:h-[40vh] flex items-center justify-center">
         <div
           className={`absolute top-[-14vh] w-full hidden bl transition-transform duration-1000 ${
             showNeedle ? 'translate-x-0' : 'translate-x-full'
@@ -77,7 +77,7 @@ export default function Slider() {
         >
           <Image className="w-full h-auto" width={600} height={150} src="/aguja.svg" alt="Aguja" />
         </div>
-        <div className="absolute top-5 text-2xl font-bold flex flex-col h-auto justify-around items-center" > <h3 className=" top-5 text-2xl text-center">Nuestros productos más destacados</h3>
+        <div className="absolute top-5 text-2xl w-[90%]  font-bold flex flex-col h-auto justify-around items-center" > <h3 className="pt-[10px] pb-[10px] top-5 text-2xl text-center">Nuestros productos más destacados</h3>
         <p className=" top-5 text-2xl text-center "> Estos son algunos de nuestros productos más elegidos por nuestros clientes.</p>
      </div>
         </div>
