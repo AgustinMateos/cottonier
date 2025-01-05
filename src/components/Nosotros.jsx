@@ -3,7 +3,7 @@ import Image from "next/image"
 export default function Nosotros ()  {
   return (
     <div className="w-full min-h-[120vh] bg-[#ECECEC] flex items-center flex-col">
-        <div className="flex flex-col-reverse items-center lg:flex-row ">
+        <div className="flex flex-col-reverse items-center lg:flex-row pt-[90px] ">
             <div className="w-full lg:w-[50%] rounded-[20px] ">
                 <Image className=" rounded-r-[20px] " alt="imagen" src='/nosotros1.svg' height={266} width={650}/></div>
             <div className="w-[90%] lg:w-[40%] h-[400px] flex flex-col justify-evenly">

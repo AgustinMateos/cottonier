@@ -18,7 +18,7 @@ export default function Compromiso() {
           setShowOfrecemos(false);
         }
       },
-      { threshold: 0.2 } // Umbral más bajo, 10% de visibilidad
+      { threshold: 0.4 } // Umbral más bajo, 10% de visibilidad
     );
 
     // Observar el div "Ofrecemos"
