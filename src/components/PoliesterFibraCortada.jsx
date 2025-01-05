@@ -82,10 +82,10 @@ const PoliesterFibraCortada = () => {
                 <div className="w-full flex items-center flex-col h-auto md:h-[80vh] justify-between">
                     <h4 className="w-[80%] h-[10vh] md:h-[5vh] text-[20px]">Detalles de productos</h4>
                     {isSmallScreen ? (
-                        <div className="relative w-[80%]">
+                        <div className="relative w-[80%] ">
                             <button
                                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                className="w-full p-2 border rounded flex justify-between items-center bg-white"
+                                className="w-full p-[10px] rounded-[10px] flex justify-between items-center bg-white"
                             >
                                 {activeData.titulo}
                                 <svg

@@ -144,7 +144,7 @@ export default function Example() {
                     <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none group-data-[open]:rotate-180" />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
+                    {[...products].map((item) => (
                       <DisclosureButton
                         key={item.name}
                         as="a"
@@ -156,15 +156,15 @@ export default function Example() {
                     ))}
                   </DisclosurePanel>
                 </Disclosure>
-                <a href="/nosotros" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                <Link href= {"/nosotros"} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                   Nosotros
-                </a>
-                <a href="/preguntasFrecuentes" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                </Link>
+                <Link href={"/preguntasFrecuentes"} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                   Preguntas Frecuentes
-                </a>
-                <a href="/contacto" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                </Link>
+                <Link href={"/contacto"} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                   Contacto
-                </a>
+                </Link>
               </div>
             </div>
           </div>
