@@ -6,7 +6,7 @@ export default function ComponentePrincipal() {
     >
       {/* Contenido dentro del div */}
       <div className="w-[100%] lg:w-[60%]  h-full flex items-center  justify-start md:justify-center">
-        <div className=" w-[90%] md:w-[80%]  bg-white/50 backdrop-blur sm:bg-transparent rounded-r-[20px] p-4  md:h-[50%] h-[60%] flex flex-col justify-around  ">
+        <div className=" w-[90%] md:w-[80%]  bg-white/50 backdrop-blur sm:bg-transparent rounded-r-[20px] p-4  md:h-[80%] h-[60%] flex flex-col justify-around  ">
           <div className= "text-[30px] md:text-[40px]"> 
             <h1>Tu aliado en calidad y variedad desde 1965:</h1>
           </div>

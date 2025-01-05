@@ -65,14 +65,14 @@ export default function Compromiso() {
         ref={ofrecemosRef} // Asignar la referencia aquí
         className={`${
           showOfrecemos ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-        } absolute bottom-[0px] sm:bottom-[30px] left-[5%] sm:left-[25%] lg:left-[45%] justify-center pl-[50px] sm:pl-[70px] rounded-l-[40px] w-[95%] sm:w-[75%] lg:w-[55%] h-[30vh] bg-white/30 backdrop-blur p-4 rounded-md flex flex-col transition-all duration-700 ease-in-out`}
+        } absolute bottom-[0px] sm:bottom-[30px] left-[5%] sm:left-[25%] lg:left-[45%] justify-center pl-[25px] items-center  sm:pl-[70px] rounded-l-[40px] w-[95%] sm:w-[75%] lg:w-[55%] h-[30vh] bg-white/30 backdrop-blur p-4 rounded-md flex flex-col transition-all duration-700 ease-in-out`}
         style={{
           transform: showOfrecemos ? 'translateX(0)' : 'translateX(0)', // Asegura que el div se mantenga visible
           opacity: showOfrecemos ? 1 : 0, // Transición de opacidad
           zIndex: showOfrecemos ? 10 : 0, // Asegura que el div esté encima de otros elementos
         }}
       >
-        <div className="w-[100%]">
+        <div className="w-[90%] sm:w-[100%]">
           <h3 className="text-[20px] font-semibold w-[30%]">Ofrecemos</h3>
           <ul className="list-disc ml-4 w-[100%] lg:w-[50%]">
             <li>Poliéster fibra cortada en diversos títulos.</li>
