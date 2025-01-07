@@ -1,5 +1,4 @@
-"use client";
-
+'use client'
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +15,7 @@ const PoliesterFibraCortada = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+    const [isVisible, setIsVisible] = useState(false);
     const images = ["/4.png", "/11.png"];
 
     const data = {
@@ -68,6 +67,19 @@ const PoliesterFibraCortada = () => {
         return () => clearInterval(interval);
     }, [images.length]);
 
+    useEffect(() => {
+        // Activar la animación al cargar la página
+        setTimeout(() => setIsVisible(true), 100); // Pequeño retraso para suavizar
+    }, []);
+
+    const handleTitleClick = (title) => {
+        setIsVisible(false);
+        setTimeout(() => {
+            setActiveData(data[title]);
+            setIsVisible(true);
+        }, 300); // Duración de la animación de salida
+    };
+
     return (
         <div className="min-h-screen bg-[#ECECEC] pt-[60px]">
             <div className="w-full flex flex-col items-center h-[80vh] md:h-[30vh] justify-center ">
@@ -108,9 +120,8 @@ const PoliesterFibraCortada = () => {
                                     {Object.keys(data).map((title) => (
                                         <li
                                             key={title}
-                                            className={`p-2 cursor-pointer hover:bg-gray-200 ${
-                                                activeData.titulo === title ? "bg-gray-100 font-semibold" : ""
-                                            }`}
+                                            className={`p-2 cursor-pointer hover:bg-gray-200 ${activeData.titulo === title ? "bg-gray-100 font-semibold" : ""
+                                                }`}
                                             onClick={() => {
                                                 setActiveData(data[title]);
                                                 setIsDropdownOpen(false);
@@ -127,13 +138,14 @@ const PoliesterFibraCortada = () => {
                             {Object.keys(data).map((title) => (
                                 <li key={title}>
                                     <a
-                                        className={`h-[50px] w-[200px] flex items-center justify-center text-white border-t-[#bdbdbd] rounded-[20px] ${
-                                            activeData.titulo === title ? "bg-[#0c0c0c] text-white" : "bg-[#bdbdbd]"
-                                        }`}
+                                        className={`h-[50px] w-[200px] flex items-center justify-center text-white border-t-[#bdbdbd] rounded-[20px] ${activeData.titulo === title
+                                            ? "bg-[#0c0c0c] text-white"
+                                            : "bg-[#bdbdbd]"
+                                            }`}
                                         href="#"
                                         onClick={(e) => {
                                             e.preventDefault();
-                                            setActiveData(data[title]);
+                                            handleTitleClick(title); // Usar la función que incluye animación
                                         }}
                                     >
                                         {title}
@@ -141,12 +153,20 @@ const PoliesterFibraCortada = () => {
                                 </li>
                             ))}
                         </ul>
+
                     )}
                     <div className="flex flex-col-reverse md:flex-col items-center justify-between md:justify-center w-full max-h-[160vh] md:h-[57vh]">
                         <div className="flex flex-col-reverse items-center sm:flex-row">
                             <div className="flex w-[90%] md:w-[50%] flex-col">
                                 <div className="h-[55vh] md:h-[40vh] flex justify-end">
-                                    <div className="p-[20px] md:p-[40px] flex items-center flex-col justify-center bg-[#FAFAFA] rounded-t-[20px] sm:rounded-t-[0px] md:rounded-r-[20px]">
+                                    <div
+                                        className={`transition-transform duration-500 ease-out transform ${isVisible
+                                            ? "translate-y-0 opacity-100"
+                                            : isSmallScreen
+                                                ? "translate-y-1/2 opacity-0" : "-translate-x-full opacity-0"} // Mueve hacia abajo en pantallas pequeñas
+                                                : "-translate-x-full opacity-0" // Mueve hacia la izquierda en pantallas grandes
+                                            } flex flex-col items-center justify-center bg-white w-[90%] md:w-[100%] mx-auto p-6 rounded-lg shadow-lg`}
+                                    >
                                         <h3 className="w-[100%] h-[20vh]">Título: {activeData.titulo}</h3>
                                         <h4 className="w-[100%] h-[50vh]">{activeData.utilizado}</h4>
                                         <div className="flex justify-between w-[100%]">
@@ -157,6 +177,7 @@ const PoliesterFibraCortada = () => {
                                             <Link href={"/contacto"}>Contacto</Link>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             <div>
@@ -173,9 +194,8 @@ const PoliesterFibraCortada = () => {
                                             <div
                                                 key={index}
                                                 onClick={() => setCurrentImageIndex(index)}
-                                                className={`h-[20px] w-[20px] rounded-full ${
-                                                    currentImageIndex === index ? "bg-[#0c0c0c]" : "bg-[#bdbdbd]"
-                                                } cursor-pointer`}
+                                                className={`h-[20px] w-[20px] rounded-full ${currentImageIndex === index ? "bg-[#0c0c0c]" : "bg-[#bdbdbd]"
+                                                    } cursor-pointer`}
                                             />
                                         ))}
                                     </div>
