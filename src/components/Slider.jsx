@@ -141,7 +141,7 @@ export default function Slider() {
           {slides[currentIndex].info.right.map((info, idx) => (
             <div
               key={idx}
-              className="p-3 bg-white rounded shadow-md hover:shadow-lg transition"
+              className="p-3   "
             >
               {info}
             </div>
