@@ -9,14 +9,14 @@ const PoliesterFibraCortada = () => {
         bobina: "Conos de 4000mts.",
         catalogo: "Catálogo de colores: 180 colores",
         utilizado: "Utilizado para la confección de prendas livianas como guardapolvos, comisaria, remeras, lenceria, medias, ropa interior, ropa de trabajo, ropa deportiva, corbatas, ropa blanca, polleras y delantales.",
-        images: ["/4.png", "/11.png"],
+        images: ["/poliesterFibraCortada/ULTRAFIL120(40-2).png", "/poliesterFibraCortada/REALTEX120(40-2).png"],
     });
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
-    const images = ["/4.png", "/11.png"];
+    const images = ["/poliesterFibraCortada/ULTRAFIL120(40-2).png", "/poliesterFibraCortada/REALTEX120(40-2).png"];
 
     const data = {
         "120(40/2)": {
@@ -24,28 +24,28 @@ const PoliesterFibraCortada = () => {
             bobina: "Conos de 4000mts.",
             catalogo: "Catálogo de colores: 180 colores",
             utilizado: "Utilizado para la confección de prendas livianas como guardapolvos, comisaria, remeras, lenceria, medias, ropa interior, ropa de trabajo, ropa deportiva, corbatas, ropa blanca, polleras y delantales.",
-            images: ["/4.png", "/11.png"],
+            images: ["/poliesterFibraCortada/ULTRAFIL120(40-2).png", "/poliesterFibraCortada/REALTEX120(40-2).png"],
         },
         "90(30/2)": {
             titulo: "90(30/2)",
             bobina: "Conos de 5000mts.",
             catalogo: "Carta de 55 colores",
             utilizado: "Utilizado para la confección de sacos, pantalones, ropa de trabajo, corpiños, bodies, sombreros, trajes de baño, sábanas y fundas, banderines, joggins, calzoncillos, ropa deportiva, atraques y todas costuras que requiera un hilo más grueso que el 120.",
-            images: ["/realtex.svg", "/11.png"],
+            images: ["/poliesterFibraCortada/ULTRAFIL90(30-2).png"],
         },
         "75(24/2)": {
             titulo: "75(24/2)",
             bobina: "Conos de 5000mts.",
             catalogo: "Catálogo de colores: 33 Colores",
             utilizado: "Utilizado para la confección de impermeables, chalecos, camisas, polleras de jean, guantes, cubrecamas, gorras, colchones, calzado deportivo liviano, camperas, tapicería liviana, atraques, ropas de esquí, sombreros. además, es ideal para acompañar al título 20/3.",
-            images: ["/4.png", "/11.png"],
+            images: ["/poliesterFibraCortada/REALTEX75(24-2).png", "/11.png"],
         },
         "20/3": {
             titulo: "20/3",
             bobina: "Conos de 3000mts.",
             catalogo: "Catálogo de colores: 33 colores",
             utilizado: "Utilizado para costuras de jean (abarca todo tipo de prenda de jean), ropa de montaña, artículos de cuero, tapicería, fundas para auto, cinturones, uniformes de tela pesada, ropa de abrigo.",
-            images: ["/4.png", "/18.png"],
+            images: ["/poliesterFibraCortada/REALTEX20-3.png", "/poliesterFibraCortada/ULTRAFIL20-3.png"],
         },
     };
 
@@ -66,7 +66,7 @@ const PoliesterFibraCortada = () => {
 
         return () => clearInterval(interval);
     }, [images.length]);
-
+  
     useEffect(() => {
         // Activar la animación al cargar la página
         setTimeout(() => setIsVisible(true), 100); // Pequeño retraso para suavizar
@@ -181,26 +181,32 @@ const PoliesterFibraCortada = () => {
                                 </div>
                             </div>
                             <div>
-                                <Image
-                                    src={activeData.images[currentImageIndex]}
-                                    width={600}
-                                    height={400}
-                                    className="object-cover h-[40vh] aspect-auto transition-opacity duration-500"
-                                    alt="Imagen del producto"
-                                />
-                                <div className="w-full h-[50px] flex items-center justify-center">
-                                    <div className="w-[20%] flex justify-evenly">
-                                        {images.map((_, index) => (
-                                            <div
-                                                key={index}
-                                                onClick={() => setCurrentImageIndex(index)}
-                                                className={`h-[20px] w-[20px] rounded-full ${currentImageIndex === index ? "bg-[#0c0c0c]" : "bg-[#bdbdbd]"
-                                                    } cursor-pointer`}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
+    <Image
+        src={activeData.images[currentImageIndex]}
+        width={600}
+        height={400}
+        className="object-cover h-[60vh]  aspect-auto transition-opacity duration-500"
+        alt="Imagen del producto"
+    />
+    <div className="w-full h-[50px] flex items-center justify-center">
+        <div className="w-[20%] flex justify-evenly">
+            {activeData.images.length > 1 ? (
+                activeData.images.map((_, index) => (
+                    <div
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`h-[20px] w-[20px] rounded-full ${
+                            currentImageIndex === index ? "bg-[#0c0c0c]" : "bg-[#bdbdbd]"
+                        } cursor-pointer`}
+                    />
+                ))
+            ) : (
+                <div className="h-[20px] w-[20px] rounded-full bg-[#0c0c0c]" />
+            )}
+        </div>
+    </div>
+</div>
+
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
 export default function Slider() {
   const slides = [
     {
@@ -41,7 +40,6 @@ export default function Slider() {
   const [showNeedle, setShowNeedle] = useState(false);
 
   useEffect(() => {
-    // Dispara la animación cuando el componente se monta
     setShowNeedle(true);
   }, []);
 
@@ -67,7 +65,7 @@ export default function Slider() {
   };
 
   return (
-    <div className="bg-[#ECECEC] w-full h-[95vh] flex flex-col items-center justify-center">
+    <div className="bg-[#ECECEC] relative w-full h-[95vh] flex flex-col items-center justify-center">
       {/* Aguja */}
       <div className="relative w-full h-[50vh] md:h-[40vh] flex items-center justify-center">
         <div
@@ -77,48 +75,49 @@ export default function Slider() {
         >
           <Image className="w-full h-auto" width={600} height={150} src="/aguja.svg" alt="Aguja" />
         </div>
-        <div className="absolute top-5 text-2xl w-[90%]  font-bold flex flex-col h-auto justify-around items-center" > <h3 className="pt-[10px] pb-[10px] top-5 text-2xl text-center">Nuestros productos más destacados</h3>
-        <p className=" top-5 text-2xl text-center "> Estos son algunos de nuestros productos más elegidos por nuestros clientes.</p>
-     </div>
+        <div className="absolute top-5 text-2xl w-[90%]  font-bold flex flex-col h-auto justify-around items-center">
+          <h3 className="pt-[10px] pb-[10px] text-2xl text-center">Nuestros productos más destacados</h3>
+          <p className="text-2xl text-center">Estos son algunos de nuestros productos más elegidos por nuestros clientes.</p>
         </div>
-        <div className="sm:hidden w-full overflow-x-scroll flex gap-4 px-4">
-  {slides.map((slide) => (
-    <Link
-     href={slide.href}
-      key={slide.id}
-      className="min-w-[80%] bg-white rounded-[20px] shadow-md p-4 flex flex-col items-center justify-center"
-    >
-      <Image
-        src={slide.src}
-        alt={slide.alt}
-        width={300}
-        height={300}
-        className="rounded-lg h-[60%] w-[100%] object-cover"
-      />
-      <div className="mt-4">
-        <h3 className="text-lg font-bold">{slide.info.left[0]}</h3>
-        <p className="text-sm">{slide.info.left[1]}</p>
-        <p className="text-sm">{slide.info.right[0]}</p>
-        <div className='pt-[10px]'><p>Ver más</p></div>
       </div>
-    </Link>
-  ))}
-</div>
 
-      <div className="relative w-full sm:flex justify-center items-center hidden ">
+      {/* Vista móvil (scroll horizontal) */}
+      <div className="sm:hidden w-full overflow-x-scroll flex gap-4 px-4">
+        {slides.map((slide) => (
+          <Link
+            href={slide.href}
+            key={slide.id}
+            className="min-w-[80%] bg-white rounded-[20px] shadow-md p-4 flex flex-col items-center justify-center"
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              width={300}
+              height={300}
+              className="rounded-lg h-[60%] w-[100%] object-cover"
+            />
+            <div className="mt-4">
+              <h3 className="text-lg font-bold">{slide.info.left[0]}</h3>
+              <p className="text-sm">{slide.info.left[1]}</p>
+              <p className="text-sm">{slide.info.right[0]}</p>
+              <div className="pt-[10px]"><p>Ver más</p></div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* Vista de escritorio */}
+      <div className="relative w-full sm:flex justify-center items-center hidden">
         {/* Contenedor de información izquierda */}
         <div className="w-1/6 flex flex-col gap-4 text-center">
           {slides[currentIndex].info.left.map((info, idx) => (
-            <div
-              key={idx}
-              className="p-3  "
-            >
+            <div key={idx} className="p-3">
               {info}
             </div>
           ))}
         </div>
 
-        {/* Slider principal */}
+        {/* Slider principal (con imagenes) */}
         <div className="relative w-[60%] h-[60vh] flex items-center justify-center overflow-hidden">
           {slides.map((slide, index) => (
             <div
@@ -139,31 +138,30 @@ export default function Slider() {
         {/* Contenedor de información derecha */}
         <div className="w-1/6 flex flex-col gap-4 text-center">
           {slides[currentIndex].info.right.map((info, idx) => (
-            <div
-              key={idx}
-              className="p-3   "
-            >
+            <div key={idx} className="p-3">
               {info}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Controles del slider */}
-      <div className="mt-5 sm:flex justify-center gap-4 hidden ">
+      
+            {/* Controles del slider */}
+            <div className="absolute top-[60%] left-4 right-4 sm:flex justify-center gap-4 hidden">
         <button
           onClick={handlePrev}
-          className="bg-gray-700 text-white px-3 py-2 rounded hover:bg-gray-800"
+          className="bg-transparent text-white px-4 py-2 pr-[70px] rounded hover:bg-transparent text-7xl drop-shadow-lg z-20"
         >
           {'<'}
         </button>
         <button
           onClick={handleNext}
-          className="bg-gray-700 text-white px-3 py-2 rounded hover:bg-gray-800"
+          className="bg-transparent text-white px-4 py-2 pl-[70px] rounded hover:bg-transparent text-7xl drop-shadow-lg z-20"
         >
           {'>'}
         </button>
       </div>
+
     </div>
   );
 }
