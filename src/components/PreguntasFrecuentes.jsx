@@ -17,12 +17,12 @@ export default function PreguntasFrecuentesHome() {
           </ul>
         </>
       ),
-      imagen: '/flechafaq.svg', // Ruta de la imagen
+     
     },
     {
       pregunta: '¿Cuál es el mínimo de compra?',
       respuesta: 'El mínimo de compra son 6 conos por color.',
-      imagen: '/flechafaq.svg', // Ruta de la imagen
+     
     },
     {
       pregunta: '¿Realizan envíos al interior del país?',
@@ -31,7 +31,7 @@ export default function PreguntasFrecuentesHome() {
           Realizamos despachos de la mercadería por expreso o transporte sugerido por nuestro cliente, para compras superiores a $500.000, sujeto a nuestro radio de cobertura.
         </>
       ),
-      imagen: '/flechafaq.svg', // Ruta de la imagen
+      
     },
     {
       pregunta: '¿Cómo puede revender hilos Cottonier?',
@@ -47,7 +47,7 @@ export default function PreguntasFrecuentesHome() {
           </ul>
         </>
       ),
-      imagen: '/flechaFaq.svg', // Ruta de la imagen
+     
     },
     {
       pregunta: '¿Qué agujas son sugeridas según título de hilo?',
@@ -132,17 +132,17 @@ export default function PreguntasFrecuentesHome() {
           </div>
         </>
       ),
-      imagen: '/flechafaq.svg',
+      
     },
     {
       pregunta: '¿Cómo puedo visualizar la carta de colores?',
       respuesta: 'Puedes visualizar la carta de colores en nuestra tienda online o solicitándonosla directamente a través de los canales de ventas mencionados.',
-      imagen: '/flechafaq.svg', // Ruta de la imagen
+      
     },
     {
       pregunta: '¿Cuáles son los tiempos de entrega de los pedidos?',
       respuesta: 'Los pedidos se preparan dentro de las 24hs de haber realizado el mismo. Una vez abonado, ya se encontrarán listos para el retiro.',
-      imagen: '/flechafaq.svg', // Ruta de la imagen
+      
     },
     {
       pregunta: '¿Qué tipos de pago aceptan?',
@@ -155,12 +155,12 @@ export default function PreguntasFrecuentesHome() {
           </ul>
         </>
       ),
-      imagen: '/flechafaq.svg', // Ruta de la imagen
+     
     },
     {
       pregunta: '¿Puedo comprar hilos directamente de su fábrica?',
       respuesta: 'No tomamos pedidos en nuestra fábrica. Los pedidos deben realizarse por alguno de nuestros canales de ventas previo retiro por nuestra fábrica.',
-      imagen: '/flechafaq.svg', // Ruta de la imagen
+      
     },
     {
       pregunta: '¿Cuáles son los días y horarios de retiro?',
@@ -171,7 +171,7 @@ export default function PreguntasFrecuentesHome() {
           Días y horarios: Lunes a viernes de 09 a 16:30hs.
         </>
       ),
-      imagen: '/flechafaq.svg', // Ruta de la imagen
+     
     },
   ];
 
@@ -195,7 +195,7 @@ export default function PreguntasFrecuentesHome() {
               {/* Imagen con rotación dinámica */}
               <div className="flex-shrink-0 transition-transform duration-300">
                 <Image
-                  src={item.imagen}
+                  src="/flechaFaq.svg"
                   alt="Flecha FAQ"
                   width={20}
                   height={20}
