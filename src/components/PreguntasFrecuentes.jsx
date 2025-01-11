@@ -58,10 +58,10 @@ export default function PreguntasFrecuentesHome() {
             <div>
               <p className="font-semibold">HILOS 100% POLIÉSTER FIBRA CORTADA:</p>
               <div className="grid grid-cols-4 gap-4">
-                <div className="font-semibold">Etiqueta Nro.</div>
-                <div className="font-semibold">Título inglés</div>
-                <div className="font-semibold">Sistema Americano</div>
-                <div className="font-semibold">Sistema Almacén</div>
+                <div className="font-semibold text-[13px] sm:text-[16px]">Etiqueta Nro.</div>
+                <div className="font-semibold text-[13px] sm:text-[16px]">Título inglés</div>
+                <div className="font-semibold text-[13px] sm:text-[16px]">Sistema Americano</div>
+                <div className="font-semibold text-[13px] sm:text-[16px]">Sistema Almacén</div>
 
                 {/* Datos para No 120 */}
                 <div>120</div>
@@ -99,10 +99,10 @@ export default function PreguntasFrecuentesHome() {
             <div>
               <p className="font-semibold">HILOS 100% ALGODÓN PEINADO Y MERCERIZADO:</p>
               <div className="grid grid-cols-4 gap-4">
-                <div className="font-semibold">Etiqueta Nro.</div>
-                <div className="font-semibold">Título inglés</div>
-                <div className="font-semibold">Sistema Americano</div>
-                <div className="font-semibold">Sistema Almacén</div>
+                <div className="font-semibold text-[13px] sm:text-[16px]">Etiqueta Nro.</div>
+                <div className="font-semibold text-[13px] sm:text-[16px]">Título inglés</div>
+                <div className="font-semibold text-[13px] sm:text-[16px]">Sistema Americano</div>
+                <div className="font-semibold text-[13px] sm:text-[16px]">Sistema Almacén</div>
 
                 {/* Datos para No 80 */}
                 <div> 80</div>
@@ -183,14 +183,14 @@ export default function PreguntasFrecuentesHome() {
 
   return (
     <div className="min-h-screen pt-[90px] bg-[#ECECEC]">
-      <div className="max-w-4xl mx-auto p-6 bg-[#ECECEC]">
+      <div className="max-w-4xl mx-auto p-[10px] sm:p-6 bg-[#ECECEC]">
         <h2 className="text-2xl font-semibold mb-4">Preguntas Frecuentes</h2>
 
         <div className="space-y-4">
           {preguntas.map((item, index) => (
             <div
               key={index}
-              className="border p-4 bg-[#ffffff] text-[10px] rounded-[20px] pb-4 flex items-center  gap-4"
+              className="border p-[0.5rem] sm:p-4 bg-[#ffffff] text-[10px] rounded-[20px] pb-4 flex items-center  gap-4"
             >
               {/* Imagen con rotación dinámica */}
               <div className="flex-shrink-0 transition-transform duration-300">
@@ -214,7 +214,7 @@ export default function PreguntasFrecuentesHome() {
                   {item.pregunta}
                 {/* Respuesta */}
                 {abierta === index && (
-                  <div className="mt-2 text-gray-700 text-[10px] sm:text-[15px]">{item.respuesta}</div>
+                  <div className="mt-2 text-gray-700 text-[16px] sm:text-[15px]">{item.respuesta}</div>
                 )}
                 </div>
               </div>
