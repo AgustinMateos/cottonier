@@ -161,15 +161,28 @@ export default function Example() {
                     ))}
                   </DisclosurePanel>
                 </Disclosure>
-                <Link href= {"/nosotros"} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                  Nosotros
-                </Link>
-                <Link href={"/preguntasFrecuentes"} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                  Preguntas Frecuentes
-                </Link>
-                <Link href={"/contacto"} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                  Contacto
-                </Link>
+                <Link
+  href="/nosotros"
+  onClick={() => setMobileMenuOpen(false)}  // Cerrar el menú cuando se haga clic
+  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+>
+  Nosotros
+</Link>
+<Link
+  href="/preguntasFrecuentes"
+  onClick={() => setMobileMenuOpen(false)}  // Cerrar el menú cuando se haga clic
+  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+>
+  Preguntas Frecuentes
+</Link>
+<Link
+  href="/contacto"
+  onClick={() => setMobileMenuOpen(false)}  // Cerrar el menú cuando se haga clic
+  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+>
+  Contacto
+</Link>
+
               </div>
             </div>
           </div>
