@@ -76,7 +76,7 @@ export default function PreguntasFrecuentesHome() {
                 <div>80/90</div>
 
                 {/* Datos para No 75 */}
-                <div>No 75</div>
+                <div>75</div>
                 <div>24/2</div>
                 <div>16/18</div>
                 <div>100/110</div>
@@ -190,7 +190,7 @@ export default function PreguntasFrecuentesHome() {
           {preguntas.map((item, index) => (
             <div
               key={index}
-              className="border p-4 bg-[#ffffff] rounded-[20px] pb-4 flex items-center gap-4"
+              className="border p-4 bg-[#ffffff] text-[10px] rounded-[20px] pb-4 flex items-center  gap-4"
             >
               {/* Imagen con rotación dinámica */}
               <div className="flex-shrink-0 transition-transform duration-300">
@@ -205,7 +205,7 @@ export default function PreguntasFrecuentesHome() {
                 />
               </div>
 
-              <div className="flex-1">
+              <div className="flex-1 ">
                 {/* Pregunta */}
                 <div
                   className="cursor-pointer text-lg font-medium text-black"
@@ -214,11 +214,9 @@ export default function PreguntasFrecuentesHome() {
                   {item.pregunta}
                 {/* Respuesta */}
                 {abierta === index && (
-                  <div className="mt-2 text-gray-700">{item.respuesta}</div>
+                  <div className="mt-2 text-gray-700 text-[10px] sm:text-[15px]">{item.respuesta}</div>
                 )}
                 </div>
-
-                
               </div>
             </div>
           ))}
