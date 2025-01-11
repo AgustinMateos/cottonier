@@ -35,7 +35,7 @@ export default function Compromiso() {
   }, []);
 
   return (
-    <div className="relative h-[900px] md:h-[600px] w-[100%] bg-[#ECECEC]">
+    <div className="relative h-[100vh] md:h-[600px] w-[100%] bg-[#ECECEC]">
       <div className="w-full h-[100%] flex flex-col lg:flex-row justify-center sm:justify-end ">
         {/* <div className="flex items-center flex-col lg:flex-row justify-between w-[90%] relative">
           <div className="w-[100%] sm:w-[95%] p-[20px] lg:w-[40%] h-[100%] sm:h-[50%] flex justify-evenly flex-col ">
@@ -64,7 +64,7 @@ export default function Compromiso() {
     >
       {/* Contenido dentro del div */}
       <div className="w-[100%] lg:w-[60%]  h-full flex sm:items-center  justify-start md:justify-center">
-        <div className=" w-[100%] sm:-[90%] md:w-[80%]   rounded-r-[20px] p-4  md:h-[80%] lg:h-[60%] h-[40%] sm:h-[35%] flex flex-col justify-evenly  ">
+        <div className=" w-[100%] sm:-[90%] md:w-[80%]   rounded-r-[20px] p-4  md:h-[80%] lg:h-[60%] h-[39%] sm:h-[35%] flex flex-col justify-evenly  ">
           <div className= "text-[25px] md:text-[35px]"> 
             <h4>Cottonier y su compromiso.</h4>
           </div>
