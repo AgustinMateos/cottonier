@@ -61,7 +61,7 @@ export default function PreguntasFrecuentesHome() {
                 <div className="font-semibold text-[13px] sm:text-[16px]">Etiqueta Nro.</div>
                 <div className="font-semibold text-[13px] sm:text-[16px]">Título inglés</div>
                 <div className="font-semibold text-[13px] sm:text-[16px]">Sistema Americano</div>
-                <div className="font-semibold text-[13px] sm:text-[16px]">Sistema Almacén</div>
+                <div className="font-semibold text-[13px] sm:text-[16px]">Sistema Alemán</div>
 
                 {/* Datos para No 120 */}
                 <div>120</div>
@@ -102,7 +102,7 @@ export default function PreguntasFrecuentesHome() {
                 <div className="font-semibold text-[13px] sm:text-[16px]">Etiqueta Nro.</div>
                 <div className="font-semibold text-[13px] sm:text-[16px]">Título inglés</div>
                 <div className="font-semibold text-[13px] sm:text-[16px]">Sistema Americano</div>
-                <div className="font-semibold text-[13px] sm:text-[16px]">Sistema Almacén</div>
+                <div className="font-semibold text-[13px] sm:text-[16px]">Sistema Alemán</div>
 
                 {/* Datos para No 80 */}
                 <div> 80</div>
