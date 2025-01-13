@@ -181,7 +181,7 @@ const PoliesterFibraCortada = () => {
                                         src={activeData.images[currentImageIndex]}
                                         width={450}
                                         height={400}
-                                        className="object-cover h-[40vh] lg:h-[52vh] aspect-auto transition-opacity duration-500"
+                                        className="object-cover pt-[50px] h-[40vh] lg:h-[52vh] aspect-auto transition-opacity duration-500"
                                         alt="Imagen del producto"
                                     />
                                     {activeData.images.length > 1 && (

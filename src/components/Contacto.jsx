@@ -1,6 +1,12 @@
+'use client'
+
+import React, { useState } from "react";
 import Image from "next/image";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contacto() {
+  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+
   const items = [
     {
       src: "/Phone.svg",
@@ -18,6 +24,24 @@ export default function Contacto() {
       text: "Lunes a Viernes de 9:00 a 16:30 horas.",
     },
   ];
+
+  const handleCaptchaChange = (value) => {
+    if (value) {
+      setIsCaptchaValid(true);
+    } else {
+      setIsCaptchaValid(false);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!isCaptchaValid) {
+      alert("Por favor, valida el CAPTCHA antes de enviar.");
+      return;
+    }
+    // Aquí agregas la lógica para enviar el formulario
+    alert("Formulario enviado con éxito.");
+  };
 
   return (
     <div className="bg-[#ECECEC] pt-[60px]">
@@ -45,7 +69,7 @@ export default function Contacto() {
 
         {/* Formulario */}
         <div className="w-full h-[60%] md:w-[40%] p-6 bg-white rounded-[20px] ">
-          <form className="flex flex-col space-y-4">
+          <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="name"
@@ -110,9 +134,17 @@ export default function Contacto() {
                 required
               />
             </div>
+
+            {/* CAPTCHA */}
+            <ReCAPTCHA
+              sitekey="TU_SITE_KEY_AQUI"
+              onChange={handleCaptchaChange}
+            />
+
             <button
               type="submit"
               className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-black border border-transparent rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              disabled={!isCaptchaValid}
             >
               Enviar
             </button>
@@ -122,4 +154,3 @@ export default function Contacto() {
     </div>
   );
 }
-
