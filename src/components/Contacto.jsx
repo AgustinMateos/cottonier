@@ -137,7 +137,7 @@ export default function Contacto() {
 
             {/* CAPTCHA */}
             <ReCAPTCHA
-              sitekey="TU_SITE_KEY_AQUI"
+              sitekey="6Ldjx7YqAAAAAHXjDw1yqjYYK_oEfciZvSyg9zjk"
               onChange={handleCaptchaChange}
             />
 
