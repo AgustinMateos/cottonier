@@ -1,3 +1,4 @@
+
 'use client';
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -10,20 +11,23 @@ const PoliesterFibraCortada = () => {
         catalogo: "Catálogo de colores: 180 colores",
         utilizado: "Utilizado para la confección de prendas livianas como guardapolvos, comisaria, remeras, lenceria, medias, ropa interior, ropa de trabajo, ropa deportiva, corbatas, ropa blanca, polleras y delantales.",
         images: ["/poliesterFibraCortada/ULTRAFIL120(40-2).png", "/REALTEX120.png"],
+        catalogoImg: "/Colores.png", // Aquí se coloca la imagen del catálogo
     });
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const [isCatalogOpen, setIsCatalogOpen] = useState(false); // Estado para controlar la visibilidad del catálogo
 
     const data = {
         "120(40/2)": {
             titulo: "120(40/2)",
             bobina: "Conos de 4000mts.",
-            catalogo: "Catálogo de colores: 180 colores",
             utilizado: "Utilizado para la confección de prendas livianas como guardapolvos, comisaria, remeras, lenceria, medias, ropa interior, ropa de trabajo, ropa deportiva, corbatas, ropa blanca, polleras y delantales.",
             images: ["/poliesterFibraCortada/ULTRAFIL120(40-2).png", "/REALTEX120.png"],
+            catalogo: "Catálogo de colores: 180 colores",
+            catalogoImg: "/Colores.png", // Aquí se coloca la imagen del catálogo
         },
         "90(30/2)": {
             titulo: "90(30/2)",
@@ -77,6 +81,11 @@ const PoliesterFibraCortada = () => {
             setCurrentImageIndex(0); // Reiniciar índice de imagen
             setIsVisible(true);
         }, 300);
+    };
+
+    // Función para abrir/cerrar el catálogo de colores
+    const toggleCatalog = () => {
+        setIsCatalogOpen(!isCatalogOpen);
     };
 
     return (
@@ -160,14 +169,23 @@ const PoliesterFibraCortada = () => {
                                         : isSmallScreen
                                             ? "translate-y-1/2 opacity-0"
                                             : "-translate-x-full opacity-0"
-                                        } flex flex-col items-center justify-center bg-white w-[90%] md:w-[100%] mx-auto p-6 rounded-lg shadow-lg`}
+                                        } flex flex-col items-center justify-center bg-white w-[90%] md:w-[100%] mx-auto p-[3.5rem] rounded-lg shadow-lg`}
                                 >
                                     <h3 className="w-[100%] h-[20vh]">Título: {activeData.titulo}</h3>
                                     <h4 className="w-[100%] h-[50vh]">{activeData.utilizado}</h4>
-                                    <div className="flex justify-between w-[100%]">
-                                        <p>{activeData.bobina}</p>
-                                        <p>{activeData.catalogo}</p>
+                                    <div className="flex justify-between w-[100%] h-[40%] items-center">
+                                        <p className="w-[40%]">{activeData.bobina}</p>
+                                         <div className="w-[60%] h-[10vh] items-center flex justify-start">
+                                        <button
+                                            className="text-blue-500"
+                                            onClick={toggleCatalog}
+                                        >
+                                       <p>Ver {activeData.catalogo}</p>
+                                        </button>
                                     </div>
+                                    </div>
+                                    {/* Enlace para abrir el catálogo de colores */}
+                                   
                                     <div className="w-full h-[10vh] items-center flex justify-start">
                                         <Link href={"/contacto"}>Contacto</Link>
                                     </div>
@@ -203,8 +221,29 @@ const PoliesterFibraCortada = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Mostrar la imagen del catálogo si está abierta */}
+            {isCatalogOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                    <div className="bg-white p-4 rounded">
+                        <button
+                            className="text-red-500 mb-4"
+                            onClick={toggleCatalog}
+                        >
+                            Cerrar
+                        </button>
+                        <Image
+                            src={activeData.catalogoImg}
+                            alt="Catálogo de colores"
+                            width={500}
+                            height={300}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
 
 export default PoliesterFibraCortada;
+
